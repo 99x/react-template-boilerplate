@@ -1,9 +1,9 @@
-import TextProps from "./Text.props"
+import TextProps from './Text.props';
 
-const Text: React.FC<TextProps> = ({ text, style }) => {
-  return (<div style={style}>
+const Text: React.FC<TextProps> = ({ text, style }) => (
+  <div style={style}>
     {text}
-  </div>)
-};
+  </div>
+);
 
 export default Text;
