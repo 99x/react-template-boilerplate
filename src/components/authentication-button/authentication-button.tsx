@@ -9,7 +9,7 @@ const AuthenticationButton = () => {
 
   return (
     <>
-      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+      {isAuthenticated ? <LogoutButton /> : <LoginButton isMicrosoft={false} name={'Login With Auth0'} />}
     </>
   );
 };

@@ -5,7 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Auth0Provider } from "@auth0/auth0-react";
+import { MsalProvider } from '@azure/msal-react';
+import { msalConfig } from './auth/authconfig';
+import { PublicClientApplication } from '@azure/msal-browser';
 
+const msalInstance = new PublicClientApplication(msalConfig);
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -14,10 +18,11 @@ root.render(
     <Auth0Provider
       domain="dev-fyiwnxos.us.auth0.com"
       clientId="ZMWrBrMTEmB8chiRWdLV4Ycp7AdtSTkY"
-      redirectUri={window.location.origin}
-    >
+      redirectUri={window.location.origin}>
       <App />
     </Auth0Provider>
+    <MsalProvider instance={msalInstance}>
+    </MsalProvider>
   </React.StrictMode>
 );
 
