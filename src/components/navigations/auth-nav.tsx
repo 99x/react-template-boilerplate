@@ -1,14 +1,12 @@
-import React from 'react';
-
 import AuthenticationButton from '../authentication-button/authentication-button';
 import AuthenticationMicrosoftButton from '../authentication-microsoft-button/authentication-microsoft-button';
 
-const AuthNav = () => {
+const AuthNav = (props : any) => {
     return (
         <>
             <div>
                 <AuthenticationButton />
-                <AuthenticationMicrosoftButton/>
+                <AuthenticationMicrosoftButton isAuthenticated = {props.isAuthenticated}/>
             </div>
             
         </>

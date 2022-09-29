@@ -19,9 +19,10 @@ root.render(
       domain="dev-fyiwnxos.us.auth0.com"
       clientId="ZMWrBrMTEmB8chiRWdLV4Ycp7AdtSTkY"
       redirectUri={window.location.origin}>
-      <App />
+        <App />
     </Auth0Provider>
     <MsalProvider instance={msalInstance}>
+      <App />
     </MsalProvider>
   </React.StrictMode>
 );
